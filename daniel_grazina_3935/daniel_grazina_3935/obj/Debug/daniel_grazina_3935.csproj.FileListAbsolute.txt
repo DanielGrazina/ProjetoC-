@@ -1,0 +1,11 @@
+C:\Users\danie\Source\Repos\DanielGrazina\ProjetoC-\daniel_grazina_3935\daniel_grazina_3935\bin\Debug\daniel_grazina_3935.exe.config
+C:\Users\danie\Source\Repos\DanielGrazina\ProjetoC-\daniel_grazina_3935\daniel_grazina_3935\bin\Debug\daniel_grazina_3935.exe
+C:\Users\danie\Source\Repos\DanielGrazina\ProjetoC-\daniel_grazina_3935\daniel_grazina_3935\bin\Debug\daniel_grazina_3935.pdb
+C:\Users\danie\Source\Repos\DanielGrazina\ProjetoC-\daniel_grazina_3935\daniel_grazina_3935\obj\Debug\daniel_grazina_3935.csproj.AssemblyReference.cache
+C:\Users\danie\Source\Repos\DanielGrazina\ProjetoC-\daniel_grazina_3935\daniel_grazina_3935\obj\Debug\daniel_grazina_3935.csproj.SuggestedBindingRedirects.cache
+C:\Users\danie\Source\Repos\DanielGrazina\ProjetoC-\daniel_grazina_3935\daniel_grazina_3935\obj\Debug\daniel_grazina_3935.Login.resources
+C:\Users\danie\Source\Repos\DanielGrazina\ProjetoC-\daniel_grazina_3935\daniel_grazina_3935\obj\Debug\daniel_grazina_3935.Properties.Resources.resources
+C:\Users\danie\Source\Repos\DanielGrazina\ProjetoC-\daniel_grazina_3935\daniel_grazina_3935\obj\Debug\daniel_grazina_3935.csproj.GenerateResource.cache
+C:\Users\danie\Source\Repos\DanielGrazina\ProjetoC-\daniel_grazina_3935\daniel_grazina_3935\obj\Debug\daniel_grazina_3935.csproj.CoreCompileInputs.cache
+C:\Users\danie\Source\Repos\DanielGrazina\ProjetoC-\daniel_grazina_3935\daniel_grazina_3935\obj\Debug\daniel_grazina_3935.exe
+C:\Users\danie\Source\Repos\DanielGrazina\ProjetoC-\daniel_grazina_3935\daniel_grazina_3935\obj\Debug\daniel_grazina_3935.pdb
