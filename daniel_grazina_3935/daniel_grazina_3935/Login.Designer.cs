@@ -38,6 +38,7 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.button1 = new System.Windows.Forms.Button();
 			this.btnHideShow = new System.Windows.Forms.Button();
+			this.lblErro = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -66,11 +67,12 @@
 			// txtUser
 			// 
 			this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.txtUser.Location = new System.Drawing.Point(98, 265);
+			this.txtUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtUser.Location = new System.Drawing.Point(98, 266);
 			this.txtUser.Multiline = true;
 			this.txtUser.Name = "txtUser";
-			this.txtUser.Size = new System.Drawing.Size(219, 25);
-			this.txtUser.TabIndex = 2;
+			this.txtUser.Size = new System.Drawing.Size(219, 27);
+			this.txtUser.TabIndex = 1;
 			// 
 			// btnExit
 			// 
@@ -88,7 +90,7 @@
 			// lblUser
 			// 
 			this.lblUser.AutoSize = true;
-			this.lblUser.Location = new System.Drawing.Point(94, 253);
+			this.lblUser.Location = new System.Drawing.Point(94, 254);
 			this.lblUser.Name = "lblUser";
 			this.lblUser.Size = new System.Drawing.Size(29, 13);
 			this.lblUser.TabIndex = 5;
@@ -106,11 +108,12 @@
 			// txtPass
 			// 
 			this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtPass.Location = new System.Drawing.Point(98, 324);
 			this.txtPass.Multiline = true;
 			this.txtPass.Name = "txtPass";
 			this.txtPass.PasswordChar = '•';
-			this.txtPass.Size = new System.Drawing.Size(184, 25);
+			this.txtPass.Size = new System.Drawing.Size(184, 27);
 			this.txtPass.TabIndex = 6;
 			// 
 			// label1
@@ -137,6 +140,7 @@
 			this.button1.TabIndex = 9;
 			this.button1.Text = "Login";
 			this.button1.UseVisualStyleBackColor = false;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// btnHideShow
 			// 
@@ -146,10 +150,22 @@
 			this.btnHideShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnHideShow.Location = new System.Drawing.Point(284, 324);
 			this.btnHideShow.Name = "btnHideShow";
-			this.btnHideShow.Size = new System.Drawing.Size(29, 25);
+			this.btnHideShow.Size = new System.Drawing.Size(33, 34);
 			this.btnHideShow.TabIndex = 10;
 			this.btnHideShow.UseVisualStyleBackColor = true;
 			this.btnHideShow.Click += new System.EventHandler(this.btnHideShow_Click);
+			// 
+			// lblErro
+			// 
+			this.lblErro.AutoSize = true;
+			this.lblErro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblErro.ForeColor = System.Drawing.Color.Red;
+			this.lblErro.Location = new System.Drawing.Point(122, 437);
+			this.lblErro.Name = "lblErro";
+			this.lblErro.Size = new System.Drawing.Size(171, 18);
+			this.lblErro.TabIndex = 11;
+			this.lblErro.Text = "Erro ao efetuar login!!";
+			this.lblErro.Visible = false;
 			// 
 			// Login
 			// 
@@ -158,6 +174,7 @@
 			this.BackColor = System.Drawing.SystemColors.Window;
 			this.ClientSize = new System.Drawing.Size(415, 492);
 			this.ControlBox = false;
+			this.Controls.Add(this.lblErro);
 			this.Controls.Add(this.btnHideShow);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.label1);
@@ -188,6 +205,7 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button btnHideShow;
+		private System.Windows.Forms.Label lblErro;
 	}
 }
 

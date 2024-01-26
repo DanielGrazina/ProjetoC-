@@ -9,14 +9,21 @@ using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace daniel_grazina_3935
 {
     public partial class Login : Form
     {
-        public Login()
+		MySqlConnection con;
+		MySqlCommand cmd;
+		MySqlDataReader dr;
+		public Login()
         {
-            InitializeComponent();
+
+			con = new MySqlConnection("Server=localhost;Database=projeto;Uid=root;Pwd=Qop2006a;");
+			InitializeComponent();
         }
 
 		private void btnExit_Click(object sender, EventArgs e)
@@ -36,6 +43,33 @@ namespace daniel_grazina_3935
 				txtPass.PasswordChar = '•';
 				btnHideShow.BackgroundImage = Resources.visible;
 			}
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			String user = txtUser.Text;
+			String pass = txtPass.Text;
+
+			cmd = new MySqlCommand();
+			con.Open();
+			cmd.Connection = con;
+
+			cmd.CommandText = "select * from tbl_login where lg_nome = '" + user + "' and lg_pass= '" + pass + "'";
+
+			dr = cmd.ExecuteReader();
+
+			if (dr.Read())
+			{
+				MessageBox.Show("Login com sucesso!!");
+			}
+			else
+			{
+				lblErro.Visible = true;
+				txtUser.Clear();
+				txtPass.Clear();
+				txtUser.Focus();
+			}
+			con.Close();
 		}
 	}
 }
