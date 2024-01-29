@@ -36,7 +36,7 @@
 			this.lblPassword = new System.Windows.Forms.Label();
 			this.txtPass = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.button1 = new System.Windows.Forms.Button();
+			this.btnLogin = new System.Windows.Forms.Button();
 			this.btnHideShow = new System.Windows.Forms.Button();
 			this.lblErro = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -127,20 +127,20 @@
 			this.label1.TabIndex = 8;
 			this.label1.Text = "DanielGrazina 2024";
 			// 
-			// button1
+			// btnLogin
 			// 
-			this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(133)))), ((int)(((byte)(197)))));
-			this.button1.FlatAppearance.BorderSize = 0;
-			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(55)))), ((int)(((byte)(82)))));
-			this.button1.Location = new System.Drawing.Point(98, 383);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(219, 51);
-			this.button1.TabIndex = 9;
-			this.button1.Text = "Login";
-			this.button1.UseVisualStyleBackColor = false;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
+			this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(133)))), ((int)(((byte)(197)))));
+			this.btnLogin.FlatAppearance.BorderSize = 0;
+			this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(55)))), ((int)(((byte)(82)))));
+			this.btnLogin.Location = new System.Drawing.Point(98, 383);
+			this.btnLogin.Name = "btnLogin";
+			this.btnLogin.Size = new System.Drawing.Size(219, 51);
+			this.btnLogin.TabIndex = 9;
+			this.btnLogin.Text = "Login";
+			this.btnLogin.UseVisualStyleBackColor = false;
+			this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
 			// 
 			// btnHideShow
 			// 
@@ -176,7 +176,7 @@
 			this.ControlBox = false;
 			this.Controls.Add(this.lblErro);
 			this.Controls.Add(this.btnHideShow);
-			this.Controls.Add(this.button1);
+			this.Controls.Add(this.btnLogin);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.lblPassword);
 			this.Controls.Add(this.txtPass);
@@ -203,7 +203,7 @@
 		private System.Windows.Forms.Label lblPassword;
 		private System.Windows.Forms.TextBox txtPass;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button btnLogin;
 		private System.Windows.Forms.Button btnHideShow;
 		private System.Windows.Forms.Label lblErro;
 	}

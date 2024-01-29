@@ -30,20 +30,20 @@
 		{
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.btnExit = new System.Windows.Forms.Button();
-			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
-			this.label5 = new System.Windows.Forms.Label();
-			this.label6 = new System.Windows.Forms.Label();
-			this.label7 = new System.Windows.Forms.Label();
-			this.label8 = new System.Windows.Forms.Label();
-			this.tabControl1 = new System.Windows.Forms.TabControl();
-			this.tabPage1 = new System.Windows.Forms.TabPage();
-			this.tabPage2 = new System.Windows.Forms.TabPage();
-			this.tabPage3 = new System.Windows.Forms.TabPage();
+			this.lblEfeiteApoioAoEstudo = new System.Windows.Forms.Label();
+			this.lblEfeiteDivisória1 = new System.Windows.Forms.Label();
+			this.lblData = new System.Windows.Forms.Label();
+			this.lblEfeitoBemVindo = new System.Windows.Forms.Label();
+			this.lblNome = new System.Windows.Forms.Label();
+			this.lblEfeiteDivisória2 = new System.Windows.Forms.Label();
+			this.lblEfeiteNivel = new System.Windows.Forms.Label();
+			this.lblNivel = new System.Windows.Forms.Label();
+			this.tcApoioEstudo = new System.Windows.Forms.TabControl();
+			this.tpQuestoes = new System.Windows.Forms.TabPage();
+			this.tpResultados = new System.Windows.Forms.TabPage();
+			this.tpGestao = new System.Windows.Forms.TabPage();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-			this.tabControl1.SuspendLayout();
+			this.tcApoioEstudo.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// pictureBox1
@@ -67,135 +67,136 @@
 			this.btnExit.Size = new System.Drawing.Size(36, 37);
 			this.btnExit.TabIndex = 5;
 			this.btnExit.UseVisualStyleBackColor = true;
+			this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
 			// 
-			// label1
+			// lblEfeiteApoioAoEstudo
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(246, 20);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(273, 29);
-			this.label1.TabIndex = 6;
-			this.label1.Text = "Apoio ao Estudo | v1.0";
+			this.lblEfeiteApoioAoEstudo.AutoSize = true;
+			this.lblEfeiteApoioAoEstudo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblEfeiteApoioAoEstudo.Location = new System.Drawing.Point(246, 20);
+			this.lblEfeiteApoioAoEstudo.Name = "lblEfeiteApoioAoEstudo";
+			this.lblEfeiteApoioAoEstudo.Size = new System.Drawing.Size(273, 29);
+			this.lblEfeiteApoioAoEstudo.TabIndex = 6;
+			this.lblEfeiteApoioAoEstudo.Text = "Apoio ao Estudo | v1.0";
 			// 
-			// label2
+			// lblEfeiteDivisória1
 			// 
-			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.ForeColor = System.Drawing.SystemColors.ControlDark;
-			this.label2.Location = new System.Drawing.Point(246, 41);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(861, 13);
-			this.label2.TabIndex = 7;
-			this.label2.Text = "_________________________________________________________________________________" +
+			this.lblEfeiteDivisória1.AutoSize = true;
+			this.lblEfeiteDivisória1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblEfeiteDivisória1.ForeColor = System.Drawing.SystemColors.ControlDark;
+			this.lblEfeiteDivisória1.Location = new System.Drawing.Point(246, 41);
+			this.lblEfeiteDivisória1.Name = "lblEfeiteDivisória1";
+			this.lblEfeiteDivisória1.Size = new System.Drawing.Size(861, 13);
+			this.lblEfeiteDivisória1.TabIndex = 7;
+			this.lblEfeiteDivisória1.Text = "_________________________________________________________________________________" +
     "_________________________________________";
 			// 
-			// label3
+			// lblData
 			// 
-			this.label3.AutoSize = true;
-			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.ForeColor = System.Drawing.SystemColors.ControlDark;
-			this.label3.Location = new System.Drawing.Point(1026, 63);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(81, 16);
-			this.label3.TabIndex = 8;
-			this.label3.Text = "00/00/0000";
+			this.lblData.AutoSize = true;
+			this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblData.ForeColor = System.Drawing.SystemColors.ControlDark;
+			this.lblData.Location = new System.Drawing.Point(1026, 63);
+			this.lblData.Name = "lblData";
+			this.lblData.Size = new System.Drawing.Size(81, 16);
+			this.lblData.TabIndex = 8;
+			this.lblData.Text = "00/00/0000";
 			// 
-			// label4
+			// lblEfeitoBemVindo
 			// 
-			this.label4.AutoSize = true;
-			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.ForeColor = System.Drawing.SystemColors.ControlDark;
-			this.label4.Location = new System.Drawing.Point(246, 64);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(70, 15);
-			this.label4.TabIndex = 9;
-			this.label4.Text = "Bem Vindo:";
+			this.lblEfeitoBemVindo.AutoSize = true;
+			this.lblEfeitoBemVindo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblEfeitoBemVindo.ForeColor = System.Drawing.SystemColors.ControlDark;
+			this.lblEfeitoBemVindo.Location = new System.Drawing.Point(246, 64);
+			this.lblEfeitoBemVindo.Name = "lblEfeitoBemVindo";
+			this.lblEfeitoBemVindo.Size = new System.Drawing.Size(70, 15);
+			this.lblEfeitoBemVindo.TabIndex = 9;
+			this.lblEfeitoBemVindo.Text = "Bem Vindo:";
 			// 
-			// label5
+			// lblNome
 			// 
-			this.label5.AutoSize = true;
-			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label5.ForeColor = System.Drawing.SystemColors.ControlDark;
-			this.label5.Location = new System.Drawing.Point(322, 64);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(41, 15);
-			this.label5.TabIndex = 10;
-			this.label5.Text = "daniel";
+			this.lblNome.AutoSize = true;
+			this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblNome.ForeColor = System.Drawing.SystemColors.ControlDark;
+			this.lblNome.Location = new System.Drawing.Point(322, 64);
+			this.lblNome.Name = "lblNome";
+			this.lblNome.Size = new System.Drawing.Size(41, 15);
+			this.lblNome.TabIndex = 10;
+			this.lblNome.Text = "daniel";
 			// 
-			// label6
+			// lblEfeiteDivisória2
 			// 
-			this.label6.AutoSize = true;
-			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label6.ForeColor = System.Drawing.SystemColors.ControlDark;
-			this.label6.Location = new System.Drawing.Point(379, 63);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(11, 15);
-			this.label6.TabIndex = 11;
-			this.label6.Text = "|";
+			this.lblEfeiteDivisória2.AutoSize = true;
+			this.lblEfeiteDivisória2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblEfeiteDivisória2.ForeColor = System.Drawing.SystemColors.ControlDark;
+			this.lblEfeiteDivisória2.Location = new System.Drawing.Point(379, 63);
+			this.lblEfeiteDivisória2.Name = "lblEfeiteDivisória2";
+			this.lblEfeiteDivisória2.Size = new System.Drawing.Size(11, 15);
+			this.lblEfeiteDivisória2.TabIndex = 11;
+			this.lblEfeiteDivisória2.Text = "|";
 			// 
-			// label7
+			// lblEfeiteNivel
 			// 
-			this.label7.AutoSize = true;
-			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label7.ForeColor = System.Drawing.SystemColors.ControlDark;
-			this.label7.Location = new System.Drawing.Point(405, 64);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(37, 15);
-			this.label7.TabIndex = 12;
-			this.label7.Text = "Nivel:";
+			this.lblEfeiteNivel.AutoSize = true;
+			this.lblEfeiteNivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblEfeiteNivel.ForeColor = System.Drawing.SystemColors.ControlDark;
+			this.lblEfeiteNivel.Location = new System.Drawing.Point(405, 64);
+			this.lblEfeiteNivel.Name = "lblEfeiteNivel";
+			this.lblEfeiteNivel.Size = new System.Drawing.Size(37, 15);
+			this.lblEfeiteNivel.TabIndex = 12;
+			this.lblEfeiteNivel.Text = "Nivel:";
 			// 
-			// label8
+			// lblNivel
 			// 
-			this.label8.AutoSize = true;
-			this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label8.ForeColor = System.Drawing.SystemColors.ControlDark;
-			this.label8.Location = new System.Drawing.Point(448, 64);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(42, 15);
-			this.label8.TabIndex = 13;
-			this.label8.Text = "admin";
+			this.lblNivel.AutoSize = true;
+			this.lblNivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblNivel.ForeColor = System.Drawing.SystemColors.ControlDark;
+			this.lblNivel.Location = new System.Drawing.Point(448, 64);
+			this.lblNivel.Name = "lblNivel";
+			this.lblNivel.Size = new System.Drawing.Size(42, 15);
+			this.lblNivel.TabIndex = 13;
+			this.lblNivel.Text = "admin";
 			// 
-			// tabControl1
+			// tcApoioEstudo
 			// 
-			this.tabControl1.Controls.Add(this.tabPage1);
-			this.tabControl1.Controls.Add(this.tabPage2);
-			this.tabControl1.Controls.Add(this.tabPage3);
-			this.tabControl1.Location = new System.Drawing.Point(251, 103);
-			this.tabControl1.Name = "tabControl1";
-			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(887, 485);
-			this.tabControl1.TabIndex = 14;
+			this.tcApoioEstudo.Controls.Add(this.tpQuestoes);
+			this.tcApoioEstudo.Controls.Add(this.tpResultados);
+			this.tcApoioEstudo.Controls.Add(this.tpGestao);
+			this.tcApoioEstudo.Location = new System.Drawing.Point(251, 103);
+			this.tcApoioEstudo.Name = "tcApoioEstudo";
+			this.tcApoioEstudo.SelectedIndex = 0;
+			this.tcApoioEstudo.Size = new System.Drawing.Size(887, 485);
+			this.tcApoioEstudo.TabIndex = 14;
 			// 
-			// tabPage1
+			// tpQuestoes
 			// 
-			this.tabPage1.Location = new System.Drawing.Point(4, 22);
-			this.tabPage1.Name = "tabPage1";
-			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(879, 459);
-			this.tabPage1.TabIndex = 0;
-			this.tabPage1.Text = "Questões de Estudo";
-			this.tabPage1.UseVisualStyleBackColor = true;
+			this.tpQuestoes.Location = new System.Drawing.Point(4, 22);
+			this.tpQuestoes.Name = "tpQuestoes";
+			this.tpQuestoes.Padding = new System.Windows.Forms.Padding(3);
+			this.tpQuestoes.Size = new System.Drawing.Size(879, 459);
+			this.tpQuestoes.TabIndex = 0;
+			this.tpQuestoes.Text = "Questões de Estudo";
+			this.tpQuestoes.UseVisualStyleBackColor = true;
 			// 
-			// tabPage2
+			// tpResultados
 			// 
-			this.tabPage2.Location = new System.Drawing.Point(4, 22);
-			this.tabPage2.Name = "tabPage2";
-			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(879, 459);
-			this.tabPage2.TabIndex = 1;
-			this.tabPage2.Text = "Resultados";
-			this.tabPage2.UseVisualStyleBackColor = true;
+			this.tpResultados.Location = new System.Drawing.Point(4, 22);
+			this.tpResultados.Name = "tpResultados";
+			this.tpResultados.Padding = new System.Windows.Forms.Padding(3);
+			this.tpResultados.Size = new System.Drawing.Size(879, 459);
+			this.tpResultados.TabIndex = 1;
+			this.tpResultados.Text = "Resultados";
+			this.tpResultados.UseVisualStyleBackColor = true;
 			// 
-			// tabPage3
+			// tpGestao
 			// 
-			this.tabPage3.Location = new System.Drawing.Point(4, 22);
-			this.tabPage3.Name = "tabPage3";
-			this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage3.Size = new System.Drawing.Size(879, 459);
-			this.tabPage3.TabIndex = 2;
-			this.tabPage3.Text = "Gestão Utilizadores";
-			this.tabPage3.UseVisualStyleBackColor = true;
+			this.tpGestao.Location = new System.Drawing.Point(4, 22);
+			this.tpGestao.Name = "tpGestao";
+			this.tpGestao.Padding = new System.Windows.Forms.Padding(3);
+			this.tpGestao.Size = new System.Drawing.Size(879, 459);
+			this.tpGestao.TabIndex = 2;
+			this.tpGestao.Text = "Gestão Utilizadores";
+			this.tpGestao.UseVisualStyleBackColor = true;
 			// 
 			// ApoioEstudo
 			// 
@@ -203,22 +204,23 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1150, 600);
 			this.ControlBox = false;
-			this.Controls.Add(this.tabControl1);
-			this.Controls.Add(this.label8);
-			this.Controls.Add(this.label7);
-			this.Controls.Add(this.label6);
-			this.Controls.Add(this.label5);
-			this.Controls.Add(this.label4);
-			this.Controls.Add(this.label3);
-			this.Controls.Add(this.label1);
+			this.Controls.Add(this.tcApoioEstudo);
+			this.Controls.Add(this.lblNivel);
+			this.Controls.Add(this.lblEfeiteNivel);
+			this.Controls.Add(this.lblEfeiteDivisória2);
+			this.Controls.Add(this.lblNome);
+			this.Controls.Add(this.lblEfeitoBemVindo);
+			this.Controls.Add(this.lblData);
+			this.Controls.Add(this.lblEfeiteApoioAoEstudo);
 			this.Controls.Add(this.btnExit);
 			this.Controls.Add(this.pictureBox1);
-			this.Controls.Add(this.label2);
+			this.Controls.Add(this.lblEfeiteDivisória1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "ApoioEstudo";
 			this.Text = "ApoioEstudo";
+			this.Load += new System.EventHandler(this.ApoioEstudo_Load);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-			this.tabControl1.ResumeLayout(false);
+			this.tcApoioEstudo.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -228,17 +230,17 @@
 
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Button btnExit;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.Label label7;
-		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.TabControl tabControl1;
-		private System.Windows.Forms.TabPage tabPage1;
-		private System.Windows.Forms.TabPage tabPage2;
-		private System.Windows.Forms.TabPage tabPage3;
+		private System.Windows.Forms.Label lblEfeiteApoioAoEstudo;
+		private System.Windows.Forms.Label lblEfeiteDivisória1;
+		private System.Windows.Forms.Label lblData;
+		private System.Windows.Forms.Label lblEfeitoBemVindo;
+		private System.Windows.Forms.Label lblNome;
+		private System.Windows.Forms.Label lblEfeiteDivisória2;
+		private System.Windows.Forms.Label lblEfeiteNivel;
+		private System.Windows.Forms.Label lblNivel;
+		private System.Windows.Forms.TabControl tcApoioEstudo;
+		private System.Windows.Forms.TabPage tpQuestoes;
+		private System.Windows.Forms.TabPage tpResultados;
+		private System.Windows.Forms.TabPage tpGestao;
 	}
 }

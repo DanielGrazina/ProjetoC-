@@ -21,3 +21,4 @@ C:\Users\danie\Source\Repos\DanielGrazina\ProjetoC-\daniel_grazina_3935\daniel_g
 C:\Users\danie\Source\Repos\DanielGrazina\ProjetoC-\daniel_grazina_3935\daniel_grazina_3935\bin\Debug\MySql.Data.xml
 C:\Users\danie\Source\Repos\DanielGrazina\ProjetoC-\daniel_grazina_3935\daniel_grazina_3935\obj\Debug\daniel_grazina_3935.exe.config
 C:\Users\danie\Source\Repos\DanielGrazina\ProjetoC-\daniel_grazina_3935\daniel_grazina_3935\obj\Debug\daniel_grazina_3935.csproj.CopyComplete
+C:\Users\danie\Source\Repos\DanielGrazina\ProjetoC-\daniel_grazina_3935\daniel_grazina_3935\obj\Debug\daniel_grazina_3935.ApoioEstudo.resources
