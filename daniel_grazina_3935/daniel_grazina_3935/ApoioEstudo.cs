@@ -29,13 +29,16 @@ namespace daniel_grazina_3935
 
 		private void ApoioEstudo_Load(object sender, EventArgs e)
 		{
+				//abrir coneccao para a DB
 				con.Open();
 				cmd = new MySqlCommand();
 				cmd.Connection = con;
-
+				
+				//Query para pedir o nivel do utilizador
 				cmd.CommandText = "Select lg_nivel from tbl_login where lg_nome='" + nome + "' and lg_pass='" + pass + "';";
 				String nivel = (String)cmd.ExecuteScalar();
 
+				//verificação do nivel do utilizador para desativar ou ativar pagina de gestão
 				if (nivel == "guest")
 				{
 					tpGestao.Enabled = false;
@@ -45,10 +48,11 @@ namespace daniel_grazina_3935
 					tpGestao.Enabled = true;
 				}
 
-				lblNome.Text = nome;
-				lblNivel.Text = nivel;
+				//Labels de apresentação
+				lblBemVindo.Text = "Bem Vindo:  " + nome + "  |  Nivel:  " + nivel;
 				lblData.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
+				//fechar ligação
 				con.Close();
 		}
 
@@ -57,5 +61,36 @@ namespace daniel_grazina_3935
 			Application.Exit();
 		}
 
+		//Bool para resolver bug de ter de dar double clique nas checkboxs
+		private bool doublecheck = false;
+		private void UncheckAllCheckBoxesExcept_CheckedChanged(object sender, EventArgs e)
+		{
+			if (sender is CheckBox selectedCheckBox && !doublecheck)
+			{
+				doublecheck = true;
+
+				// Obtém a TabPage que contém a CheckBox selecionada
+				TabPage tabPage = selectedCheckBox.Parent as TabPage;
+
+				if (tabPage != null)
+				{
+					// Itera apenas sobre os controles dentro da TabPage
+					foreach (Control control in tabPage.Controls)
+					{
+						if (control is CheckBox checkBox && checkBox != selectedCheckBox)
+						{
+							// Verifica se a CheckBox já está marcada antes de desmarcar
+							if (checkBox.CheckState == CheckState.Checked)
+							{
+								// Desmarca apenas se já estiver marcada
+								checkBox.Checked = false;
+							}
+						}
+					}
+				}
+
+				doublecheck = false;
+			}
+		}
 	}
 }
