@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using daniel_grazina_3935.classes;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
@@ -60,38 +61,6 @@ namespace daniel_grazina_3935
 		private void btnExit_Click(object sender, EventArgs e)
 		{
 			Application.Exit();
-		}
-
-		//Bool para resolver bug de ter de dar double clique nas checkboxs
-		private bool doublecheck = false;
-		private void UncheckAllCheckBoxesExcept_CheckedChanged(object sender, EventArgs e)
-		{
-			if (sender is CheckBox selectedCheckBox && !doublecheck)
-			{
-				doublecheck = true;
-
-				// Obtém a TabPage que contém a CheckBox selecionada
-				TabPage tabPage = selectedCheckBox.Parent as TabPage;
-
-				if (tabPage != null)
-				{
-					// Itera apenas sobre os controles dentro da TabPage
-					foreach (Control control in tabPage.Controls)
-					{
-						if (control is CheckBox checkBox && checkBox != selectedCheckBox)
-						{
-							// Verifica se a CheckBox já está marcada antes de desmarcar
-							if (checkBox.CheckState == CheckState.Checked)
-							{
-								// Desmarca apenas se já estiver marcada
-								checkBox.Checked = false;
-							}
-						}
-					}
-				}
-
-				doublecheck = false;
-			}
 		}
 
 		private void btnVerLista_Click(object sender, EventArgs e)
@@ -189,6 +158,144 @@ namespace daniel_grazina_3935
 				}
 			}
 			con.Close();
+		}
+
+
+		Questoes[] p = new Questoes[10];
+		int indiceAtual;
+		CheckBox temp;
+
+		//Bool para resolver bug de ter de dar double clique nas checkboxs
+		private bool doublecheck = false;
+		private void UncheckAllCheckBoxesExcept_CheckedChanged(object sender, EventArgs e)
+		{
+			
+			if (sender is CheckBox selectedCheckBox && !doublecheck)
+			{
+				p[indiceAtual].SetCheckbox(selectedCheckBox);
+				temp = selectedCheckBox;
+				doublecheck = true;
+
+				// Obtém a TabPage que contém a CheckBox selecionada
+				TabPage tabPage = selectedCheckBox.Parent as TabPage;
+
+				if (tabPage != null)
+				{
+					// Itera apenas sobre os controles dentro da TabPage
+					foreach (Control control in tabPage.Controls)
+					{
+						if (control is CheckBox checkBox && checkBox != selectedCheckBox)
+						{
+							// Verifica se a CheckBox já está marcada antes de desmarcar
+							if (checkBox.CheckState == CheckState.Checked)
+							{
+								// Desmarca apenas se já estiver marcada
+								checkBox.Checked = false;
+							}
+						}
+					}
+				}
+
+				doublecheck = false;
+			}
+		}
+
+		private void getPerguntasRespostas(int[] idperguntas, String materia)
+		{
+			for (int i = 0; i < 10; i++)
+			{
+				List<string> respostas = new List<string>();
+				String buscarPerguntas = "Select pergunta from tbl_perguntas where id='"+ materia + idperguntas[i] + "'";
+				String buscarRespotas = "Select resposta from tbl_respostas where id_pergunta='"+ materia + idperguntas[i] + "'";
+				con.Open();
+				cmd = new MySqlCommand();
+				cmd.Connection = con;
+				cmd.CommandText = buscarPerguntas;
+				String pergunta = (String)cmd.ExecuteScalar();
+
+				cmd2 = new MySqlCommand();
+				cmd2.Connection = con;
+				cmd2.CommandText = buscarRespotas;
+				MySqlDataReader reader = cmd2.ExecuteReader();
+				while (reader.Read())
+				{
+					// Supondo que a coluna se chama 'resposta'
+					string resposta = Convert.ToString(reader["resposta"]);
+
+					// Adiciona cada resposta à lista
+					respostas.Add(resposta);
+				}
+
+				p[i] = new Questoes(pergunta, respostas[0], respostas[1], respostas[2], respostas[3]);
+				con.Close();
+			}
+		}
+
+		private void ExibirPergunta()
+		{
+			if (indiceAtual >= 0 && indiceAtual < 10)
+			{
+				lblPergunta.Text = p[indiceAtual].GetPergunta();
+				lblRespostaA.Text = p[indiceAtual].GetRespostaA();
+				lblRespostaB.Text = p[indiceAtual].GetRespostaB();
+				lblRespostaC.Text = p[indiceAtual].GetRespostaC();
+				lblRespostaD.Text = p[indiceAtual].GetRespostaD();
+				if (p[indiceAtual].GetCheck() != null)
+					p[indiceAtual].GetCheck().Checked = true;
+				else
+					if(temp != null)
+						temp.Checked = false;
+			}
+		}
+
+		private void btnIniciar_Click(object sender, EventArgs e)
+		{
+			Random rnd = new Random();
+			int[] idperguntas = new int[10];
+			for(int i = 0; i<10; i++)
+			{
+				bool repetido = true;
+				do
+				{
+					int temp = rnd.Next(1, 20);
+					if(idperguntas.Contains(temp)){
+						repetido = true;
+					}
+					else
+					{
+						idperguntas[i] = temp;
+						repetido=false;
+					}
+				} while (repetido);
+			}
+
+			switch (cbMaterias.Text)
+			{
+				case "Português":
+					getPerguntasRespostas(idperguntas, "portugues");
+					ExibirPergunta();
+					break;
+				case "Matemática":
+
+				case "Programação":
+
+				default:
+
+					break;
+			}
+
+		}
+
+		private void btnProximaPergunta_Click(object sender, EventArgs e)
+		{
+			indiceAtual++;
+			ExibirPergunta();
+		}
+
+		private void btnPerguntaAnterior_Click(object sender, EventArgs e)
+		{
+			indiceAtual--;
+			ExibirPergunta();
 		}
 	}
 }

@@ -181,6 +181,7 @@
 			this.btnPerguntaAnterior.TabIndex = 36;
 			this.btnPerguntaAnterior.Text = "<";
 			this.btnPerguntaAnterior.UseVisualStyleBackColor = true;
+			this.btnPerguntaAnterior.Click += new System.EventHandler(this.btnPerguntaAnterior_Click);
 			// 
 			// btnProximaPergunta
 			// 
@@ -190,6 +191,7 @@
 			this.btnProximaPergunta.TabIndex = 35;
 			this.btnProximaPergunta.Text = ">";
 			this.btnProximaPergunta.UseVisualStyleBackColor = true;
+			this.btnProximaPergunta.Click += new System.EventHandler(this.btnProximaPergunta_Click);
 			// 
 			// cbD
 			// 
@@ -370,6 +372,7 @@
 			this.btnIniciar.TabIndex = 17;
 			this.btnIniciar.Text = "iniciar";
 			this.btnIniciar.UseVisualStyleBackColor = true;
+			this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
 			// 
 			// cbMaterias
 			// 

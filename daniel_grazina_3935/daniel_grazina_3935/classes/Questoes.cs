@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace daniel_grazina_3935.classes
 {
@@ -13,11 +14,23 @@ namespace daniel_grazina_3935.classes
 		private String respostaB;
 		private String respostaC;
 		private String respostaD;
-		private String CheckChecked;
+		private CheckBox CheckChecked;
 		
-		public Questoes()
+		public Questoes(String pergunta, String respostaA, String respostaB, String respostaC, String respostaD)
 		{
-			
+			this.pergunta = pergunta;
+			this.respostaA = respostaA;
+			this.respostaB = respostaB;
+			this.respostaC = respostaC;
+			this.respostaD = respostaD;
 		}
+
+		public String GetPergunta() {  return pergunta; }
+		public String GetRespostaA() {  return respostaA; }
+		public String GetRespostaB() { return respostaB; }
+		public String GetRespostaC() {  return respostaC; }
+		public String GetRespostaD() { return respostaD; }
+		public CheckBox GetCheck() { return CheckChecked; }
+		public void SetCheckbox(CheckBox checkBox) { this.CheckChecked = checkBox; }
 	}
 }
