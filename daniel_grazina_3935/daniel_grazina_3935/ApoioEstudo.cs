@@ -16,6 +16,7 @@ namespace daniel_grazina_3935
 	{
 		MySqlConnection con;
 		MySqlCommand cmd;
+		MySqlCommand cmd2;
 		MySqlDataReader dr;
 		
 		//Strings para receber nome e pass do utilizador
@@ -91,6 +92,103 @@ namespace daniel_grazina_3935
 
 				doublecheck = false;
 			}
+		}
+
+		private void btnVerLista_Click(object sender, EventArgs e)
+		{
+			con.Open();
+			cmd = new MySqlCommand();
+			cmd.Connection = con;
+
+			String query = "Select * from tbl_login";
+			cmd.CommandText = query;
+
+			MySqlDataAdapter da = new MySqlDataAdapter();
+			da.SelectCommand = cmd;
+
+			DataTable dt = new DataTable();	
+			da.Fill(dt);
+			gridView.DataSource = dt;
+
+			da.Dispose();
+			con.Close();
+		}
+
+		private void btnInserirUser_Click(object sender, EventArgs e)
+		{
+			if(txtUserName.Text == "" || txtPassword.Text == "" || cbNivel.Text == "")
+			{
+				MessageBox.Show("Erro!!\n Falta de informação para criar novo user!!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else
+			{
+				con.Open();
+				cmd = new MySqlCommand();
+				cmd.Connection = con;
+				String inserir = "INSERT INTO tbl_login (lg_nome, lg_pass, lg_nivel) values ('"+txtUserName.Text+"', '"+txtPassword.Text+"','"+cbNivel.Text+"')";
+				cmd.CommandText = inserir;
+				dr = cmd.ExecuteReader();
+				con.Close();
+				MessageBox.Show("Utilizador criado com sucesso!!", "Novo utilizador", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}
+		}
+
+		private void btnAtualizarUser_Click(object sender, EventArgs e)
+		{
+			con.Open();
+
+			cmd.Connection = con;
+			cmd.CommandText = "Select lg_nome from tbl_login where lg_id='" + txtId.Text + "'";
+			String VerificacaoUser = (String)cmd.ExecuteScalar();
+
+
+			if (txtId.Text == "" || VerificacaoUser == null)
+			{
+				MessageBox.Show("Erro!!\nId inválido!!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else
+			{
+				if (txtUserName.Text == "" || txtPassword.Text == "" || cbNivel.Text == "")
+				{
+					MessageBox.Show("Erro!!\n Falta de informação para editar user!!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+				else
+				{
+					cmd2 = new MySqlCommand();
+					cmd2.Connection = con;
+					cmd2.CommandText = "update tbl_login set lg_nome = '" + txtUserName.Text + "', lg_pass = '" + txtPassword.Text + "', lg_nivel='"+cbNivel.Text+"' where lg_id = '" + txtId.Text + "'";
+					dr = cmd2.ExecuteReader();
+					MessageBox.Show("User Alterado com sucesso!!", "Atualiza User", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
+			}
+			con.Close();
+		}
+
+		private void btnEliminarUser_Click(object sender, EventArgs e)
+		{
+			con.Open();
+
+			cmd.Connection = con;
+			cmd.CommandText = "Select lg_nome from tbl_login where lg_id='" + txtId.Text + "'";
+			String VerificacaoUser = (String)cmd.ExecuteScalar();
+
+			if (txtId.Text == "" || VerificacaoUser == null)
+			{
+				MessageBox.Show("Erro!!\nId inválido!!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else
+			{
+				DialogResult simnao = MessageBox.Show("Tem a certeza que quer eliminar o user??", "Verificação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+				if (simnao == DialogResult.Yes)
+				{
+					cmd2 = new MySqlCommand();
+					cmd2.Connection = con;
+					cmd2.CommandText = "delete from tbl_login where lg_id = '" + txtId.Text + "'";
+					dr = cmd2.ExecuteReader();
+					MessageBox.Show("User Eliminado!!", "Eliminar User", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
+			}
+			con.Close();
 		}
 	}
 }

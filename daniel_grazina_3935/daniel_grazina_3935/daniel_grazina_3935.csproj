@@ -53,6 +53,7 @@
     <Compile Include="ApoioEstudo.Designer.cs">
       <DependentUpon>ApoioEstudo.cs</DependentUpon>
     </Compile>
+    <Compile Include="classes\Questoes.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
