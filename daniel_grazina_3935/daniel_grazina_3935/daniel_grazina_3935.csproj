@@ -109,5 +109,14 @@
   <ItemGroup>
     <None Include="Resources\books.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\matematica.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\portugues.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\programacao.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

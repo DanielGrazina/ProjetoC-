@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using daniel_grazina_3935.classes;
+using daniel_grazina_3935.Properties;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
@@ -235,6 +236,7 @@ namespace daniel_grazina_3935
 		{
 			if (indiceAtual >= 0 && indiceAtual < 10)
 			{
+				lblNumPergunta.Text = (indiceAtual + 1).ToString();
 				lblPergunta.Text = p[indiceAtual].GetPergunta();
 				lblRespostaA.Text = p[indiceAtual].GetRespostaA();
 				lblRespostaB.Text = p[indiceAtual].GetRespostaB();
@@ -250,6 +252,8 @@ namespace daniel_grazina_3935
 
 		private void btnIniciar_Click(object sender, EventArgs e)
 		{
+			indiceAtual = 0;
+			temp = null;
 			Random rnd = new Random();
 			int[] idperguntas = new int[10];
 			for(int i = 0; i<10; i++)
@@ -273,14 +277,21 @@ namespace daniel_grazina_3935
 			{
 				case "Português":
 					getPerguntasRespostas(idperguntas, "portugues");
+					pcbQuestoes.Image = Resources.portugues;
 					ExibirPergunta();
 					break;
 				case "Matemática":
-
+					getPerguntasRespostas(idperguntas, "matematica");
+					pcbQuestoes.Image = Resources.matematica;
+					ExibirPergunta();
+					break;
 				case "Programação":
-
+					getPerguntasRespostas(idperguntas, "programacao");
+					pcbQuestoes.Image = Resources.programacao;
+					ExibirPergunta();
+					break;
 				default:
-
+					MessageBox.Show("Erro!!\nDisciplina Invalida","ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					break;
 			}
 
@@ -294,8 +305,15 @@ namespace daniel_grazina_3935
 
 		private void btnPerguntaAnterior_Click(object sender, EventArgs e)
 		{
-			indiceAtual--;
-			ExibirPergunta();
+			if (indiceAtual-- < 0)
+			{
+				MessageBox.Show("Primeiro Registo!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}
+			else
+			{
+				indiceAtual--;
+				ExibirPergunta();
+			}
 		}
 	}
 }

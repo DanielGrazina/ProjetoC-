@@ -175,7 +175,7 @@
 			// 
 			// btnPerguntaAnterior
 			// 
-			this.btnPerguntaAnterior.Location = new System.Drawing.Point(634, 380);
+			this.btnPerguntaAnterior.Location = new System.Drawing.Point(659, 380);
 			this.btnPerguntaAnterior.Name = "btnPerguntaAnterior";
 			this.btnPerguntaAnterior.Size = new System.Drawing.Size(75, 23);
 			this.btnPerguntaAnterior.TabIndex = 36;
@@ -185,7 +185,7 @@
 			// 
 			// btnProximaPergunta
 			// 
-			this.btnProximaPergunta.Location = new System.Drawing.Point(715, 380);
+			this.btnProximaPergunta.Location = new System.Drawing.Point(740, 380);
 			this.btnProximaPergunta.Name = "btnProximaPergunta";
 			this.btnProximaPergunta.Size = new System.Drawing.Size(75, 23);
 			this.btnProximaPergunta.TabIndex = 35;
@@ -195,7 +195,7 @@
 			// 
 			// cbD
 			// 
-			this.cbD.Location = new System.Drawing.Point(763, 269);
+			this.cbD.Location = new System.Drawing.Point(788, 269);
 			this.cbD.Name = "cbD";
 			this.cbD.Size = new System.Drawing.Size(17, 24);
 			this.cbD.TabIndex = 33;
@@ -204,7 +204,7 @@
 			// 
 			// cbC
 			// 
-			this.cbC.Location = new System.Drawing.Point(763, 230);
+			this.cbC.Location = new System.Drawing.Point(788, 230);
 			this.cbC.Name = "cbC";
 			this.cbC.Size = new System.Drawing.Size(17, 24);
 			this.cbC.TabIndex = 32;
@@ -213,7 +213,7 @@
 			// 
 			// cbB
 			// 
-			this.cbB.Location = new System.Drawing.Point(763, 190);
+			this.cbB.Location = new System.Drawing.Point(788, 190);
 			this.cbB.Name = "cbB";
 			this.cbB.Size = new System.Drawing.Size(17, 24);
 			this.cbB.TabIndex = 31;
@@ -222,7 +222,7 @@
 			// 
 			// cbA
 			// 
-			this.cbA.Location = new System.Drawing.Point(763, 149);
+			this.cbA.Location = new System.Drawing.Point(788, 149);
 			this.cbA.Name = "cbA";
 			this.cbA.Size = new System.Drawing.Size(17, 24);
 			this.cbA.TabIndex = 30;
@@ -234,7 +234,7 @@
 			this.lblRespostaD.BackColor = System.Drawing.Color.Transparent;
 			this.lblRespostaD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.lblRespostaD.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblRespostaD.Location = new System.Drawing.Point(187, 269);
+			this.lblRespostaD.Location = new System.Drawing.Point(212, 269);
 			this.lblRespostaD.Name = "lblRespostaD";
 			this.lblRespostaD.Size = new System.Drawing.Size(560, 28);
 			this.lblRespostaD.TabIndex = 29;
@@ -245,7 +245,7 @@
 			this.lblRespostaC.BackColor = System.Drawing.Color.Transparent;
 			this.lblRespostaC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.lblRespostaC.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblRespostaC.Location = new System.Drawing.Point(187, 230);
+			this.lblRespostaC.Location = new System.Drawing.Point(212, 230);
 			this.lblRespostaC.Name = "lblRespostaC";
 			this.lblRespostaC.Size = new System.Drawing.Size(560, 28);
 			this.lblRespostaC.TabIndex = 28;
@@ -256,7 +256,7 @@
 			this.lblRespostaB.BackColor = System.Drawing.Color.Transparent;
 			this.lblRespostaB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.lblRespostaB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblRespostaB.Location = new System.Drawing.Point(187, 190);
+			this.lblRespostaB.Location = new System.Drawing.Point(212, 190);
 			this.lblRespostaB.Name = "lblRespostaB";
 			this.lblRespostaB.Size = new System.Drawing.Size(560, 28);
 			this.lblRespostaB.TabIndex = 27;
@@ -267,7 +267,7 @@
 			this.lblRespostaA.BackColor = System.Drawing.Color.Transparent;
 			this.lblRespostaA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.lblRespostaA.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblRespostaA.Location = new System.Drawing.Point(187, 148);
+			this.lblRespostaA.Location = new System.Drawing.Point(212, 148);
 			this.lblRespostaA.Name = "lblRespostaA";
 			this.lblRespostaA.Size = new System.Drawing.Size(560, 28);
 			this.lblRespostaA.TabIndex = 26;
@@ -278,7 +278,7 @@
 			this.lblEfeiteReposta2.BackColor = System.Drawing.Color.Transparent;
 			this.lblEfeiteReposta2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblEfeiteReposta2.ForeColor = System.Drawing.SystemColors.ControlDark;
-			this.lblEfeiteReposta2.Location = new System.Drawing.Point(153, 186);
+			this.lblEfeiteReposta2.Location = new System.Drawing.Point(178, 186);
 			this.lblEfeiteReposta2.Name = "lblEfeiteReposta2";
 			this.lblEfeiteReposta2.Size = new System.Drawing.Size(28, 28);
 			this.lblEfeiteReposta2.TabIndex = 25;
@@ -290,7 +290,7 @@
 			this.lblEfeiteReposta3.BackColor = System.Drawing.Color.Transparent;
 			this.lblEfeiteReposta3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblEfeiteReposta3.ForeColor = System.Drawing.SystemColors.ControlDark;
-			this.lblEfeiteReposta3.Location = new System.Drawing.Point(153, 226);
+			this.lblEfeiteReposta3.Location = new System.Drawing.Point(178, 226);
 			this.lblEfeiteReposta3.Name = "lblEfeiteReposta3";
 			this.lblEfeiteReposta3.Size = new System.Drawing.Size(28, 28);
 			this.lblEfeiteReposta3.TabIndex = 24;
@@ -302,7 +302,7 @@
 			this.lblEfeiteReposta4.BackColor = System.Drawing.Color.Transparent;
 			this.lblEfeiteReposta4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblEfeiteReposta4.ForeColor = System.Drawing.SystemColors.ControlDark;
-			this.lblEfeiteReposta4.Location = new System.Drawing.Point(153, 265);
+			this.lblEfeiteReposta4.Location = new System.Drawing.Point(178, 265);
 			this.lblEfeiteReposta4.Name = "lblEfeiteReposta4";
 			this.lblEfeiteReposta4.Size = new System.Drawing.Size(28, 28);
 			this.lblEfeiteReposta4.TabIndex = 23;
@@ -314,7 +314,7 @@
 			this.lblEfeiteReposta1.BackColor = System.Drawing.Color.Transparent;
 			this.lblEfeiteReposta1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblEfeiteReposta1.ForeColor = System.Drawing.SystemColors.ControlDark;
-			this.lblEfeiteReposta1.Location = new System.Drawing.Point(153, 145);
+			this.lblEfeiteReposta1.Location = new System.Drawing.Point(178, 145);
 			this.lblEfeiteReposta1.Name = "lblEfeiteReposta1";
 			this.lblEfeiteReposta1.Size = new System.Drawing.Size(28, 28);
 			this.lblEfeiteReposta1.TabIndex = 22;
@@ -326,7 +326,7 @@
 			this.lblPergunta.BackColor = System.Drawing.Color.BurlyWood;
 			this.lblPergunta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.lblPergunta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblPergunta.Location = new System.Drawing.Point(187, 102);
+			this.lblPergunta.Location = new System.Drawing.Point(212, 102);
 			this.lblPergunta.Name = "lblPergunta";
 			this.lblPergunta.Size = new System.Drawing.Size(603, 28);
 			this.lblPergunta.TabIndex = 21;
@@ -337,7 +337,7 @@
 			this.lblNumPergunta.BackColor = System.Drawing.Color.BlanchedAlmond;
 			this.lblNumPergunta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.lblNumPergunta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblNumPergunta.Location = new System.Drawing.Point(153, 102);
+			this.lblNumPergunta.Location = new System.Drawing.Point(178, 102);
 			this.lblNumPergunta.Name = "lblNumPergunta";
 			this.lblNumPergunta.Size = new System.Drawing.Size(28, 28);
 			this.lblNumPergunta.TabIndex = 20;
@@ -348,7 +348,7 @@
 			this.pcbQuestoes.Image = global::daniel_grazina_3935.Properties.Resources.books;
 			this.pcbQuestoes.Location = new System.Drawing.Point(0, 102);
 			this.pcbQuestoes.Name = "pcbQuestoes";
-			this.pcbQuestoes.Size = new System.Drawing.Size(147, 238);
+			this.pcbQuestoes.Size = new System.Drawing.Size(161, 238);
 			this.pcbQuestoes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pcbQuestoes.TabIndex = 19;
 			this.pcbQuestoes.TabStop = false;
@@ -414,7 +414,7 @@
 			this.lblEfeiteNavegacao.AutoSize = true;
 			this.lblEfeiteNavegacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblEfeiteNavegacao.ForeColor = System.Drawing.SystemColors.ControlDark;
-			this.lblEfeiteNavegacao.Location = new System.Drawing.Point(632, 360);
+			this.lblEfeiteNavegacao.Location = new System.Drawing.Point(657, 360);
 			this.lblEfeiteNavegacao.Name = "lblEfeiteNavegacao";
 			this.lblEfeiteNavegacao.Size = new System.Drawing.Size(158, 15);
 			this.lblEfeiteNavegacao.TabIndex = 15;
@@ -425,7 +425,7 @@
 			this.lblEfeiteDivisoria4.AutoSize = true;
 			this.lblEfeiteDivisoria4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblEfeiteDivisoria4.ForeColor = System.Drawing.SystemColors.Desktop;
-			this.lblEfeiteDivisoria4.Location = new System.Drawing.Point(594, 364);
+			this.lblEfeiteDivisoria4.Location = new System.Drawing.Point(619, 364);
 			this.lblEfeiteDivisoria4.Name = "lblEfeiteDivisoria4";
 			this.lblEfeiteDivisoria4.Size = new System.Drawing.Size(196, 13);
 			this.lblEfeiteDivisoria4.TabIndex = 34;
