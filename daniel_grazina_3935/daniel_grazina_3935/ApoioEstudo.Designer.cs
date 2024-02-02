@@ -59,26 +59,36 @@
 			this.lblEfeiteNavegacao = new System.Windows.Forms.Label();
 			this.lblEfeiteDivisoria4 = new System.Windows.Forms.Label();
 			this.tpResultados = new System.Windows.Forms.TabPage();
+			this.lblErradas = new System.Windows.Forms.Label();
+			this.lblCorretas = new System.Windows.Forms.Label();
+			this.lblEfeiteErradas = new System.Windows.Forms.Label();
+			this.txtErradas = new System.Windows.Forms.TextBox();
+			this.lblEfeiteCorretas = new System.Windows.Forms.Label();
+			this.txtCorretas = new System.Windows.Forms.TextBox();
+			this.label2 = new System.Windows.Forms.Label();
+			this.gdViewHistórico = new System.Windows.Forms.DataGridView();
 			this.tpGestao = new System.Windows.Forms.TabPage();
+			this.cbNivel = new System.Windows.Forms.ComboBox();
+			this.txtPassword = new System.Windows.Forms.TextBox();
+			this.lblPass = new System.Windows.Forms.Label();
+			this.lblNivel = new System.Windows.Forms.Label();
+			this.txtUserName = new System.Windows.Forms.TextBox();
+			this.txtId = new System.Windows.Forms.TextBox();
+			this.lblUserName = new System.Windows.Forms.Label();
+			this.lblId = new System.Windows.Forms.Label();
+			this.btnEliminarUser = new System.Windows.Forms.Button();
+			this.btnAtualizarUser = new System.Windows.Forms.Button();
+			this.btnInserirUser = new System.Windows.Forms.Button();
+			this.btnVerLista = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.gridView = new System.Windows.Forms.DataGridView();
 			this.btnExit = new System.Windows.Forms.Button();
 			this.pcbEfeiteEstudar = new System.Windows.Forms.PictureBox();
-			this.btnVerLista = new System.Windows.Forms.Button();
-			this.btnInserirUser = new System.Windows.Forms.Button();
-			this.btnAtualizarUser = new System.Windows.Forms.Button();
-			this.btnEliminarUser = new System.Windows.Forms.Button();
-			this.lblId = new System.Windows.Forms.Label();
-			this.lblUserName = new System.Windows.Forms.Label();
-			this.txtId = new System.Windows.Forms.TextBox();
-			this.txtUserName = new System.Windows.Forms.TextBox();
-			this.lblNivel = new System.Windows.Forms.Label();
-			this.lblPass = new System.Windows.Forms.Label();
-			this.txtPassword = new System.Windows.Forms.TextBox();
-			this.cbNivel = new System.Windows.Forms.ComboBox();
 			this.tcApoioEstudo.SuspendLayout();
 			this.tpQuestoes.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pcbQuestoes)).BeginInit();
+			this.tpResultados.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.gdViewHistórico)).BeginInit();
 			this.tpGestao.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pcbEfeiteEstudar)).BeginInit();
@@ -195,6 +205,7 @@
 			// 
 			// cbD
 			// 
+			this.cbD.Enabled = false;
 			this.cbD.Location = new System.Drawing.Point(788, 269);
 			this.cbD.Name = "cbD";
 			this.cbD.Size = new System.Drawing.Size(17, 24);
@@ -204,6 +215,7 @@
 			// 
 			// cbC
 			// 
+			this.cbC.Enabled = false;
 			this.cbC.Location = new System.Drawing.Point(788, 230);
 			this.cbC.Name = "cbC";
 			this.cbC.Size = new System.Drawing.Size(17, 24);
@@ -213,6 +225,7 @@
 			// 
 			// cbB
 			// 
+			this.cbB.Enabled = false;
 			this.cbB.Location = new System.Drawing.Point(788, 190);
 			this.cbB.Name = "cbB";
 			this.cbB.Size = new System.Drawing.Size(17, 24);
@@ -222,6 +235,7 @@
 			// 
 			// cbA
 			// 
+			this.cbA.Enabled = false;
 			this.cbA.Location = new System.Drawing.Point(788, 149);
 			this.cbA.Name = "cbA";
 			this.cbA.Size = new System.Drawing.Size(17, 24);
@@ -326,9 +340,9 @@
 			this.lblPergunta.BackColor = System.Drawing.Color.BurlyWood;
 			this.lblPergunta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.lblPergunta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblPergunta.Location = new System.Drawing.Point(212, 102);
+			this.lblPergunta.Location = new System.Drawing.Point(212, 79);
 			this.lblPergunta.Name = "lblPergunta";
-			this.lblPergunta.Size = new System.Drawing.Size(603, 28);
+			this.lblPergunta.Size = new System.Drawing.Size(603, 44);
 			this.lblPergunta.TabIndex = 21;
 			this.lblPergunta.Text = "...";
 			// 
@@ -337,11 +351,12 @@
 			this.lblNumPergunta.BackColor = System.Drawing.Color.BlanchedAlmond;
 			this.lblNumPergunta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.lblNumPergunta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblNumPergunta.Location = new System.Drawing.Point(178, 102);
+			this.lblNumPergunta.Location = new System.Drawing.Point(167, 79);
 			this.lblNumPergunta.Name = "lblNumPergunta";
-			this.lblNumPergunta.Size = new System.Drawing.Size(28, 28);
+			this.lblNumPergunta.Size = new System.Drawing.Size(39, 44);
 			this.lblNumPergunta.TabIndex = 20;
 			this.lblNumPergunta.Text = "...";
+			this.lblNumPergunta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// pcbQuestoes
 			// 
@@ -433,6 +448,14 @@
 			// 
 			// tpResultados
 			// 
+			this.tpResultados.Controls.Add(this.lblErradas);
+			this.tpResultados.Controls.Add(this.lblCorretas);
+			this.tpResultados.Controls.Add(this.lblEfeiteErradas);
+			this.tpResultados.Controls.Add(this.txtErradas);
+			this.tpResultados.Controls.Add(this.lblEfeiteCorretas);
+			this.tpResultados.Controls.Add(this.txtCorretas);
+			this.tpResultados.Controls.Add(this.label2);
+			this.tpResultados.Controls.Add(this.gdViewHistórico);
 			this.tpResultados.Location = new System.Drawing.Point(4, 22);
 			this.tpResultados.Name = "tpResultados";
 			this.tpResultados.Padding = new System.Windows.Forms.Padding(3);
@@ -440,6 +463,89 @@
 			this.tpResultados.TabIndex = 1;
 			this.tpResultados.Text = "Resultados";
 			this.tpResultados.UseVisualStyleBackColor = true;
+			// 
+			// lblErradas
+			// 
+			this.lblErradas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblErradas.ForeColor = System.Drawing.Color.Black;
+			this.lblErradas.Location = new System.Drawing.Point(6, 223);
+			this.lblErradas.Name = "lblErradas";
+			this.lblErradas.Size = new System.Drawing.Size(34, 34);
+			this.lblErradas.TabIndex = 22;
+			this.lblErradas.Text = "00";
+			this.lblErradas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// lblCorretas
+			// 
+			this.lblCorretas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblCorretas.ForeColor = System.Drawing.Color.Black;
+			this.lblCorretas.Location = new System.Drawing.Point(6, 116);
+			this.lblCorretas.Name = "lblCorretas";
+			this.lblCorretas.Size = new System.Drawing.Size(34, 34);
+			this.lblCorretas.TabIndex = 20;
+			this.lblCorretas.Text = "00";
+			this.lblCorretas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// lblEfeiteErradas
+			// 
+			this.lblEfeiteErradas.AutoSize = true;
+			this.lblEfeiteErradas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblEfeiteErradas.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+			this.lblEfeiteErradas.Location = new System.Drawing.Point(6, 204);
+			this.lblEfeiteErradas.Name = "lblEfeiteErradas";
+			this.lblEfeiteErradas.Size = new System.Drawing.Size(55, 16);
+			this.lblEfeiteErradas.TabIndex = 19;
+			this.lblEfeiteErradas.Text = "Erradas";
+			// 
+			// txtErradas
+			// 
+			this.txtErradas.BackColor = System.Drawing.Color.Red;
+			this.txtErradas.Enabled = false;
+			this.txtErradas.Location = new System.Drawing.Point(6, 223);
+			this.txtErradas.Multiline = true;
+			this.txtErradas.Name = "txtErradas";
+			this.txtErradas.Size = new System.Drawing.Size(0, 34);
+			this.txtErradas.TabIndex = 18;
+			// 
+			// lblEfeiteCorretas
+			// 
+			this.lblEfeiteCorretas.AutoSize = true;
+			this.lblEfeiteCorretas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblEfeiteCorretas.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+			this.lblEfeiteCorretas.Location = new System.Drawing.Point(6, 97);
+			this.lblEfeiteCorretas.Name = "lblEfeiteCorretas";
+			this.lblEfeiteCorretas.Size = new System.Drawing.Size(58, 16);
+			this.lblEfeiteCorretas.TabIndex = 17;
+			this.lblEfeiteCorretas.Text = "Corretas";
+			// 
+			// txtCorretas
+			// 
+			this.txtCorretas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+			this.txtCorretas.Enabled = false;
+			this.txtCorretas.Location = new System.Drawing.Point(6, 116);
+			this.txtCorretas.Multiline = true;
+			this.txtCorretas.Name = "txtCorretas";
+			this.txtCorretas.Size = new System.Drawing.Size(0, 34);
+			this.txtCorretas.TabIndex = 16;
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.ForeColor = System.Drawing.SystemColors.ControlDark;
+			this.label2.Location = new System.Drawing.Point(405, 69);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(60, 16);
+			this.label2.TabIndex = 15;
+			this.label2.Text = "Histórico";
+			// 
+			// gdViewHistórico
+			// 
+			this.gdViewHistórico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.gdViewHistórico.Location = new System.Drawing.Point(408, 88);
+			this.gdViewHistórico.Name = "gdViewHistórico";
+			this.gdViewHistórico.Size = new System.Drawing.Size(444, 315);
+			this.gdViewHistórico.TabIndex = 0;
 			// 
 			// tpGestao
 			// 
@@ -464,6 +570,122 @@
 			this.tpGestao.TabIndex = 2;
 			this.tpGestao.Text = "Gestão Utilizadores";
 			this.tpGestao.UseVisualStyleBackColor = true;
+			// 
+			// cbNivel
+			// 
+			this.cbNivel.FormattingEnabled = true;
+			this.cbNivel.Items.AddRange(new object[] {
+            "guest",
+            "admin"});
+			this.cbNivel.Location = new System.Drawing.Point(603, 28);
+			this.cbNivel.Name = "cbNivel";
+			this.cbNivel.Size = new System.Drawing.Size(181, 21);
+			this.cbNivel.TabIndex = 27;
+			// 
+			// txtPassword
+			// 
+			this.txtPassword.Location = new System.Drawing.Point(603, 91);
+			this.txtPassword.Name = "txtPassword";
+			this.txtPassword.Size = new System.Drawing.Size(181, 20);
+			this.txtPassword.TabIndex = 26;
+			// 
+			// lblPass
+			// 
+			this.lblPass.AutoSize = true;
+			this.lblPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblPass.ForeColor = System.Drawing.SystemColors.ControlDark;
+			this.lblPass.Location = new System.Drawing.Point(515, 89);
+			this.lblPass.Name = "lblPass";
+			this.lblPass.Size = new System.Drawing.Size(82, 20);
+			this.lblPass.TabIndex = 25;
+			this.lblPass.Text = "Password:";
+			// 
+			// lblNivel
+			// 
+			this.lblNivel.AutoSize = true;
+			this.lblNivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblNivel.ForeColor = System.Drawing.SystemColors.ControlDark;
+			this.lblNivel.Location = new System.Drawing.Point(551, 28);
+			this.lblNivel.Name = "lblNivel";
+			this.lblNivel.Size = new System.Drawing.Size(46, 20);
+			this.lblNivel.TabIndex = 24;
+			this.lblNivel.Text = "Nível:";
+			// 
+			// txtUserName
+			// 
+			this.txtUserName.Location = new System.Drawing.Point(225, 89);
+			this.txtUserName.Name = "txtUserName";
+			this.txtUserName.Size = new System.Drawing.Size(245, 20);
+			this.txtUserName.TabIndex = 23;
+			// 
+			// txtId
+			// 
+			this.txtId.Location = new System.Drawing.Point(225, 30);
+			this.txtId.Name = "txtId";
+			this.txtId.Size = new System.Drawing.Size(100, 20);
+			this.txtId.TabIndex = 22;
+			// 
+			// lblUserName
+			// 
+			this.lblUserName.AutoSize = true;
+			this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblUserName.ForeColor = System.Drawing.SystemColors.ControlDark;
+			this.lblUserName.Location = new System.Drawing.Point(126, 89);
+			this.lblUserName.Name = "lblUserName";
+			this.lblUserName.Size = new System.Drawing.Size(93, 20);
+			this.lblUserName.TabIndex = 21;
+			this.lblUserName.Text = "User Name:";
+			// 
+			// lblId
+			// 
+			this.lblId.AutoSize = true;
+			this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblId.ForeColor = System.Drawing.SystemColors.ControlDark;
+			this.lblId.Location = new System.Drawing.Point(189, 28);
+			this.lblId.Name = "lblId";
+			this.lblId.Size = new System.Drawing.Size(30, 20);
+			this.lblId.TabIndex = 20;
+			this.lblId.Text = "ID:";
+			// 
+			// btnEliminarUser
+			// 
+			this.btnEliminarUser.Location = new System.Drawing.Point(706, 371);
+			this.btnEliminarUser.Name = "btnEliminarUser";
+			this.btnEliminarUser.Size = new System.Drawing.Size(146, 39);
+			this.btnEliminarUser.TabIndex = 19;
+			this.btnEliminarUser.Text = "Eliminar User";
+			this.btnEliminarUser.UseVisualStyleBackColor = true;
+			this.btnEliminarUser.Click += new System.EventHandler(this.btnEliminarUser_Click);
+			// 
+			// btnAtualizarUser
+			// 
+			this.btnAtualizarUser.Location = new System.Drawing.Point(706, 306);
+			this.btnAtualizarUser.Name = "btnAtualizarUser";
+			this.btnAtualizarUser.Size = new System.Drawing.Size(146, 39);
+			this.btnAtualizarUser.TabIndex = 18;
+			this.btnAtualizarUser.Text = "Atualizar User";
+			this.btnAtualizarUser.UseVisualStyleBackColor = true;
+			this.btnAtualizarUser.Click += new System.EventHandler(this.btnAtualizarUser_Click);
+			// 
+			// btnInserirUser
+			// 
+			this.btnInserirUser.Location = new System.Drawing.Point(706, 240);
+			this.btnInserirUser.Name = "btnInserirUser";
+			this.btnInserirUser.Size = new System.Drawing.Size(146, 39);
+			this.btnInserirUser.TabIndex = 17;
+			this.btnInserirUser.Text = "Inserir User";
+			this.btnInserirUser.UseVisualStyleBackColor = true;
+			this.btnInserirUser.Click += new System.EventHandler(this.btnInserirUser_Click);
+			// 
+			// btnVerLista
+			// 
+			this.btnVerLista.Location = new System.Drawing.Point(706, 178);
+			this.btnVerLista.Name = "btnVerLista";
+			this.btnVerLista.Size = new System.Drawing.Size(146, 39);
+			this.btnVerLista.TabIndex = 16;
+			this.btnVerLista.Text = "Ver Lista";
+			this.btnVerLista.UseVisualStyleBackColor = true;
+			this.btnVerLista.Click += new System.EventHandler(this.btnVerLista_Click);
 			// 
 			// label1
 			// 
@@ -507,122 +729,6 @@
 			this.pcbEfeiteEstudar.TabIndex = 0;
 			this.pcbEfeiteEstudar.TabStop = false;
 			// 
-			// btnVerLista
-			// 
-			this.btnVerLista.Location = new System.Drawing.Point(706, 178);
-			this.btnVerLista.Name = "btnVerLista";
-			this.btnVerLista.Size = new System.Drawing.Size(146, 39);
-			this.btnVerLista.TabIndex = 16;
-			this.btnVerLista.Text = "Ver Lista";
-			this.btnVerLista.UseVisualStyleBackColor = true;
-			this.btnVerLista.Click += new System.EventHandler(this.btnVerLista_Click);
-			// 
-			// btnInserirUser
-			// 
-			this.btnInserirUser.Location = new System.Drawing.Point(706, 240);
-			this.btnInserirUser.Name = "btnInserirUser";
-			this.btnInserirUser.Size = new System.Drawing.Size(146, 39);
-			this.btnInserirUser.TabIndex = 17;
-			this.btnInserirUser.Text = "Inserir User";
-			this.btnInserirUser.UseVisualStyleBackColor = true;
-			this.btnInserirUser.Click += new System.EventHandler(this.btnInserirUser_Click);
-			// 
-			// btnAtualizarUser
-			// 
-			this.btnAtualizarUser.Location = new System.Drawing.Point(706, 306);
-			this.btnAtualizarUser.Name = "btnAtualizarUser";
-			this.btnAtualizarUser.Size = new System.Drawing.Size(146, 39);
-			this.btnAtualizarUser.TabIndex = 18;
-			this.btnAtualizarUser.Text = "Atualizar User";
-			this.btnAtualizarUser.UseVisualStyleBackColor = true;
-			this.btnAtualizarUser.Click += new System.EventHandler(this.btnAtualizarUser_Click);
-			// 
-			// btnEliminarUser
-			// 
-			this.btnEliminarUser.Location = new System.Drawing.Point(706, 371);
-			this.btnEliminarUser.Name = "btnEliminarUser";
-			this.btnEliminarUser.Size = new System.Drawing.Size(146, 39);
-			this.btnEliminarUser.TabIndex = 19;
-			this.btnEliminarUser.Text = "Eliminar User";
-			this.btnEliminarUser.UseVisualStyleBackColor = true;
-			this.btnEliminarUser.Click += new System.EventHandler(this.btnEliminarUser_Click);
-			// 
-			// lblId
-			// 
-			this.lblId.AutoSize = true;
-			this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblId.ForeColor = System.Drawing.SystemColors.ControlDark;
-			this.lblId.Location = new System.Drawing.Point(189, 28);
-			this.lblId.Name = "lblId";
-			this.lblId.Size = new System.Drawing.Size(30, 20);
-			this.lblId.TabIndex = 20;
-			this.lblId.Text = "ID:";
-			// 
-			// lblUserName
-			// 
-			this.lblUserName.AutoSize = true;
-			this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblUserName.ForeColor = System.Drawing.SystemColors.ControlDark;
-			this.lblUserName.Location = new System.Drawing.Point(126, 89);
-			this.lblUserName.Name = "lblUserName";
-			this.lblUserName.Size = new System.Drawing.Size(93, 20);
-			this.lblUserName.TabIndex = 21;
-			this.lblUserName.Text = "User Name:";
-			// 
-			// txtId
-			// 
-			this.txtId.Location = new System.Drawing.Point(225, 30);
-			this.txtId.Name = "txtId";
-			this.txtId.Size = new System.Drawing.Size(100, 20);
-			this.txtId.TabIndex = 22;
-			// 
-			// txtUserName
-			// 
-			this.txtUserName.Location = new System.Drawing.Point(225, 89);
-			this.txtUserName.Name = "txtUserName";
-			this.txtUserName.Size = new System.Drawing.Size(245, 20);
-			this.txtUserName.TabIndex = 23;
-			// 
-			// lblNivel
-			// 
-			this.lblNivel.AutoSize = true;
-			this.lblNivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblNivel.ForeColor = System.Drawing.SystemColors.ControlDark;
-			this.lblNivel.Location = new System.Drawing.Point(551, 28);
-			this.lblNivel.Name = "lblNivel";
-			this.lblNivel.Size = new System.Drawing.Size(46, 20);
-			this.lblNivel.TabIndex = 24;
-			this.lblNivel.Text = "Nível:";
-			// 
-			// lblPass
-			// 
-			this.lblPass.AutoSize = true;
-			this.lblPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblPass.ForeColor = System.Drawing.SystemColors.ControlDark;
-			this.lblPass.Location = new System.Drawing.Point(515, 89);
-			this.lblPass.Name = "lblPass";
-			this.lblPass.Size = new System.Drawing.Size(82, 20);
-			this.lblPass.TabIndex = 25;
-			this.lblPass.Text = "Password:";
-			// 
-			// txtPassword
-			// 
-			this.txtPassword.Location = new System.Drawing.Point(603, 91);
-			this.txtPassword.Name = "txtPassword";
-			this.txtPassword.Size = new System.Drawing.Size(181, 20);
-			this.txtPassword.TabIndex = 26;
-			// 
-			// cbNivel
-			// 
-			this.cbNivel.FormattingEnabled = true;
-			this.cbNivel.Items.AddRange(new object[] {
-            "guest",
-            "admin"});
-			this.cbNivel.Location = new System.Drawing.Point(603, 28);
-			this.cbNivel.Name = "cbNivel";
-			this.cbNivel.Size = new System.Drawing.Size(181, 21);
-			this.cbNivel.TabIndex = 27;
-			// 
 			// ApoioEstudo
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -644,6 +750,9 @@
 			this.tpQuestoes.ResumeLayout(false);
 			this.tpQuestoes.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pcbQuestoes)).EndInit();
+			this.tpResultados.ResumeLayout(false);
+			this.tpResultados.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.gdViewHistórico)).EndInit();
 			this.tpGestao.ResumeLayout(false);
 			this.tpGestao.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
@@ -703,5 +812,13 @@
 		private System.Windows.Forms.TextBox txtUserName;
 		private System.Windows.Forms.TextBox txtId;
 		private System.Windows.Forms.ComboBox cbNivel;
+		private System.Windows.Forms.DataGridView gdViewHistórico;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.TextBox txtCorretas;
+		private System.Windows.Forms.Label lblCorretas;
+		private System.Windows.Forms.Label lblEfeiteErradas;
+		private System.Windows.Forms.TextBox txtErradas;
+		private System.Windows.Forms.Label lblEfeiteCorretas;
+		private System.Windows.Forms.Label lblErradas;
 	}
 }

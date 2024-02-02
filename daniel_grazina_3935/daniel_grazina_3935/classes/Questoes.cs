@@ -9,6 +9,7 @@ namespace daniel_grazina_3935.classes
 {
 	public class Questoes
 	{
+		private String id;
 		private String pergunta;
 		private String respostaA;
 		private String respostaB;
@@ -16,8 +17,9 @@ namespace daniel_grazina_3935.classes
 		private String respostaD;
 		private CheckBox CheckChecked;
 		
-		public Questoes(String pergunta, String respostaA, String respostaB, String respostaC, String respostaD)
+		public Questoes(String id, String pergunta, String respostaA, String respostaB, String respostaC, String respostaD)
 		{
+			this.id = id;
 			this.pergunta = pergunta;
 			this.respostaA = respostaA;
 			this.respostaB = respostaB;
@@ -25,6 +27,7 @@ namespace daniel_grazina_3935.classes
 			this.respostaD = respostaD;
 		}
 
+		public String getId() { return id; }
 		public String GetPergunta() {  return pergunta; }
 		public String GetRespostaA() {  return respostaA; }
 		public String GetRespostaB() { return respostaB; }
@@ -32,5 +35,7 @@ namespace daniel_grazina_3935.classes
 		public String GetRespostaD() { return respostaD; }
 		public CheckBox GetCheck() { return CheckChecked; }
 		public void SetCheckbox(CheckBox checkBox) { this.CheckChecked = checkBox; }
+
+
 	}
 }

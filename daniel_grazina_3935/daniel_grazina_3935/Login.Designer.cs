@@ -69,9 +69,8 @@
 			this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.txtUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtUser.Location = new System.Drawing.Point(98, 266);
-			this.txtUser.Multiline = true;
 			this.txtUser.Name = "txtUser";
-			this.txtUser.Size = new System.Drawing.Size(219, 27);
+			this.txtUser.Size = new System.Drawing.Size(219, 26);
 			this.txtUser.TabIndex = 1;
 			// 
 			// btnExit
@@ -110,10 +109,9 @@
 			this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtPass.Location = new System.Drawing.Point(98, 324);
-			this.txtPass.Multiline = true;
 			this.txtPass.Name = "txtPass";
 			this.txtPass.PasswordChar = '•';
-			this.txtPass.Size = new System.Drawing.Size(184, 27);
+			this.txtPass.Size = new System.Drawing.Size(184, 26);
 			this.txtPass.TabIndex = 6;
 			// 
 			// label1

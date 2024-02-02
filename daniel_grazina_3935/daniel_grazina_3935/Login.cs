@@ -22,7 +22,7 @@ namespace daniel_grazina_3935
 		public Login()
         {
 			//Coneccao base de dados
-			con = new MySqlConnection("Server=localhost;Database=projeto;Uid=root;Pwd=Qop2006a;");
+			con = new MySqlConnection("Server=127.0.0.1;Database=projeto;Uid=root;Pwd=Qop2006a;");
 			InitializeComponent();
         }
 
