@@ -173,6 +173,7 @@ namespace daniel_grazina_3935
 
 				//Adicionar pergunta e respostas à classe Questoes
 				p[i] = new Questoes(materia+idperguntas[i], pergunta, respostas[0], respostas[1], respostas[2], respostas[3]);
+				p[i].SetCheckbox(null);
 				con.Close();
 			}
 		}
@@ -222,7 +223,10 @@ namespace daniel_grazina_3935
 		//Botão para iniciar as perguntas de acordo com a disciplina
 		private void btnIniciar_Click(object sender, EventArgs e)
 		{
+			//Resetar variaveis
 			indiceAtual = 0;
+			corretas = 0;
+			erradas = 0;
 			temp = null;
 			lblPergunta.Text = null;
 			lblRespostaA.Text = null;
@@ -233,6 +237,10 @@ namespace daniel_grazina_3935
 			cbB.Enabled = true;
 			cbC.Enabled = true;
 			cbD.Enabled = true;
+			lblCorretas.Location = new Point(6, 116);
+			lblErradas.Location = new Point(6, 116);
+
+			//Recolher IDs aleatorios para perguntas
 			Random rnd = new Random();
 			int[] idperguntas = new int[10];
 			for(int i = 0; i<10; i++)
