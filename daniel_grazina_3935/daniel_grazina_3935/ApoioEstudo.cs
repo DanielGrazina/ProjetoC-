@@ -199,10 +199,10 @@ namespace daniel_grazina_3935
 		}
 
 		//Função para verificar se a resposta está correta ou errada
-		private void getVerificacaoResposta(String id, String resposta)
+		private void getVerificacaoResposta(String idpergunta, String resposta)
 		{
 			con.Open();
-			String query = "Select correta from tbl_respostas where id_pergunta ='" + id + "' and resposta ='" + resposta + "'";
+			String query = "Select correta from tbl_respostas where id_pergunta ='" + idpergunta + "' and resposta ='" + resposta + "'";
 			cmd = new MySqlCommand();
 			cmd.Connection = con;
 			cmd.CommandText = query;
@@ -238,7 +238,7 @@ namespace daniel_grazina_3935
 			cbC.Enabled = true;
 			cbD.Enabled = true;
 			lblCorretas.Location = new Point(6, 116);
-			lblErradas.Location = new Point(6, 116);
+			lblErradas.Location = new Point(6, 223);
 
 			//Recolher IDs aleatorios para perguntas
 			Random rnd = new Random();
@@ -317,13 +317,13 @@ namespace daniel_grazina_3935
 									getVerificacaoResposta(p[i].getId(), p[i].GetRespostaA());
 									break;
 								case "cbB":
-									getVerificacaoResposta(p[i].getId(), p[i].GetRespostaA());
+									getVerificacaoResposta(p[i].getId(), p[i].GetRespostaB());
 									break;
 								case "cbC":
-									getVerificacaoResposta(p[i].getId(), p[i].GetRespostaA());
+									getVerificacaoResposta(p[i].getId(), p[i].GetRespostaC());
 									break;
 								case "cbD":
-									getVerificacaoResposta(p[i].getId(), p[i].GetRespostaA());
+									getVerificacaoResposta(p[i].getId(), p[i].GetRespostaD());
 									break;
 							}
 						}
