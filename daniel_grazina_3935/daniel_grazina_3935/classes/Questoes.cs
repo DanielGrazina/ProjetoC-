@@ -16,7 +16,7 @@ namespace daniel_grazina_3935.classes
 		private String respostaC;
 		private String respostaD;
 		private CheckBox CheckChecked;
-		
+
 		public Questoes(String id, String pergunta, String respostaA, String respostaB, String respostaC, String respostaD)
 		{
 			this.id = id;

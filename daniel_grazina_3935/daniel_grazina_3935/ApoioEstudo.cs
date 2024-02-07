@@ -43,7 +43,7 @@ namespace daniel_grazina_3935
 		private int indiceAtual;
 
 		//Variavel para checkbox
-		private CheckBox temp;
+		private CheckBox verificacaoCheckbox;
 
 		//Contagem das respostas certas e erradas
 		private int corretas = 0;
@@ -51,6 +51,9 @@ namespace daniel_grazina_3935
 
 		//Bool para resolver bug de ter de dar double clique nas checkboxs
 		private bool doublecheck = false;
+
+		//Bool para caso tenha finalizado a prova
+		private bool finalizado = false;
 
 
 		/*
@@ -112,11 +115,9 @@ namespace daniel_grazina_3935
 		//Função para dar uncheck as checkboxs
 		private void UncheckAllCheckBoxesExcept_CheckedChanged(object sender, EventArgs e)
 		{
-			
 			if (sender is CheckBox selectedCheckBox && !doublecheck)
 			{
-				p[indiceAtual].SetCheckbox(selectedCheckBox);
-				temp = selectedCheckBox;
+				verificacaoCheckbox = selectedCheckBox;
 				doublecheck = true;
 
 				// Obtém a TabPage que contém a CheckBox selecionada
@@ -124,17 +125,13 @@ namespace daniel_grazina_3935
 
 				if (tabPage != null)
 				{
-					// Itera apenas sobre os controles dentro da TabPage
-					foreach (Control control in tabPage.Controls)
+					//Procura as checkbox diferentes da selecionada
+					foreach (CheckBox checkBox in tabPage.Controls.OfType<CheckBox>().Where(cb => cb != selectedCheckBox))
 					{
-						if (control is CheckBox checkBox && checkBox != selectedCheckBox)
+						// Desmarca apenas se já estiver marcada
+						if (checkBox.Checked)
 						{
-							// Verifica se a CheckBox já está marcada antes de desmarcar
-							if (checkBox.CheckState == CheckState.Checked)
-							{
-								// Desmarca apenas se já estiver marcada
-								checkBox.Checked = false;
-							}
+							checkBox.Checked = false;
 						}
 					}
 				}
@@ -191,10 +188,17 @@ namespace daniel_grazina_3935
 				lblRespostaC.Text = p[indiceAtual].GetRespostaC();
 				lblRespostaD.Text = p[indiceAtual].GetRespostaD();
 				if (p[indiceAtual].GetCheck() != null)
+				{
 					p[indiceAtual].GetCheck().Checked = true;
+					verificacaoCheckbox = p[indiceAtual].GetCheck();
+				}
 				else
-					if(temp != null)
-						temp.Checked = false;
+				{
+					if (verificacaoCheckbox != null) {
+						verificacaoCheckbox.Checked = false;
+						verificacaoCheckbox = null;
+					}
+				}
 			}
 		}
 
@@ -224,10 +228,11 @@ namespace daniel_grazina_3935
 		private void btnIniciar_Click(object sender, EventArgs e)
 		{
 			//Resetar variaveis
+			finalizado = false;
 			indiceAtual = 0;
 			corretas = 0;
 			erradas = 0;
-			temp = null;
+			verificacaoCheckbox = null;
 			lblPergunta.Text = null;
 			lblRespostaA.Text = null;
 			lblRespostaB.Text = null;
@@ -239,6 +244,7 @@ namespace daniel_grazina_3935
 			cbD.Enabled = true;
 			lblCorretas.Location = new Point(6, 116);
 			lblErradas.Location = new Point(6, 223);
+			
 
 			//Recolher IDs aleatorios para perguntas
 			Random rnd = new Random();
@@ -289,83 +295,99 @@ namespace daniel_grazina_3935
 		{
 			if (indiceAtual + 1 > 9)
 			{
-				DialogResult simnao = MessageBox.Show("Fim das perguntas!\nQuer finalizar?", "Final", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-				if(simnao == DialogResult.Yes)
+				if (finalizado)
 				{
-					/*
-					##############
-					#            #
-					# Resultados #
-					#            #
-					##############
-					*/
-
-					//Desativar checkboxs para não modificar respostas depois de acabar a prova
-					cbA.Enabled = false;
-					cbB.Enabled = false;
-					cbC.Enabled = false;
-					cbD.Enabled = false;
-					//Verificar respostas
-					for(int i = 0;	i < 10; i++)
+					MessageBox.Show("Ultimo Registo!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
+				else
+				{
+					DialogResult simnao = MessageBox.Show("Fim das perguntas!\nQuer finalizar?", "Final", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+					if (simnao == DialogResult.Yes)
 					{
-						CheckBox ondePergunta = p[i].GetCheck();
-						if (ondePergunta != null)
+						/*
+						##############
+						#            #
+						# Resultados #
+						#            #
+						##############
+						*/
+
+						//Marcar como finalizado
+						finalizado = true;
+
+						//Desativar checkboxs para não modificar respostas depois de acabar a prova
+						cbA.Enabled = false;
+						cbB.Enabled = false;
+						cbC.Enabled = false;
+						cbD.Enabled = false;
+						//Verificar respostas
+						for (int i = 0; i < 10; i++)
 						{
-							switch (ondePergunta.Name)
+							CheckBox ondePergunta = p[i].GetCheck();
+							if (ondePergunta != null)
 							{
-								case "cbA":
-									getVerificacaoResposta(p[i].getId(), p[i].GetRespostaA());
-									break;
-								case "cbB":
-									getVerificacaoResposta(p[i].getId(), p[i].GetRespostaB());
-									break;
-								case "cbC":
-									getVerificacaoResposta(p[i].getId(), p[i].GetRespostaC());
-									break;
-								case "cbD":
-									getVerificacaoResposta(p[i].getId(), p[i].GetRespostaD());
-									break;
+								switch (ondePergunta.Name)
+								{
+									case "cbA":
+										getVerificacaoResposta(p[i].getId(), p[i].GetRespostaA());
+										break;
+									case "cbB":
+										getVerificacaoResposta(p[i].getId(), p[i].GetRespostaB());
+										break;
+									case "cbC":
+										getVerificacaoResposta(p[i].getId(), p[i].GetRespostaC());
+										break;
+									case "cbD":
+										getVerificacaoResposta(p[i].getId(), p[i].GetRespostaD());
+										break;
+								}
 							}
 						}
+
+						//Modificar grafico dos resultados
+						int stepSize = 250 / 10;
+						txtCorretas.Size = new Size(stepSize * corretas, 34);
+						txtErradas.Size = new Size(stepSize * erradas, 34);
+						lblCorretas.Location = new Point(lblCorretas.Location.X + (stepSize * corretas + 5), lblCorretas.Location.Y);
+						lblErradas.Location = new Point(lblErradas.Location.X + (stepSize * erradas + 5), lblErradas.Location.Y);
+						lblCorretas.Text = corretas.ToString();
+						lblErradas.Text = erradas.ToString();
+
+						//Query para inserir informações no histórico e query para mostrar historico
+						String inserir = "Insert Into tbl_historico values (" + id + ", '" + nome + "', '" + cbMaterias.Text + "', " + corretas + ", " + erradas + ", '" + lblData.Text + "')";
+						String mostrar = "Select * from tbl_historico where id=" + id;
+						con.Open();
+						cmd = new MySqlCommand();
+						cmd.Connection = con;
+						cmd.CommandText = inserir;
+						cmd.ExecuteReader();
+						con.Close();
+
+						con.Open();
+						cmd2 = new MySqlCommand();
+						cmd2.Connection = con;
+						cmd2.CommandText = mostrar;
+
+						MySqlDataAdapter da = new MySqlDataAdapter();
+						da.SelectCommand = cmd2;
+
+						DataTable dt = new DataTable();
+						da.Fill(dt);
+						gdViewHistórico.DataSource = dt;
+
+						da.Dispose();
+						con.Close();
+
+						//mostrar tab Resultados no final das perguntas
+						tcApoioEstudo.SelectTab(tpResultados);
 					}
-
-					//Modificar grafico dos resultados
-					int stepSize = 250 / 10;
-					txtCorretas.Size = new Size(stepSize*corretas, 34);
-					txtErradas.Size = new Size(stepSize*erradas, 34);
-					lblCorretas.Location = new Point(lblCorretas.Location.X + (stepSize * corretas + 5), lblCorretas.Location.Y);
-					lblErradas.Location = new Point(lblErradas.Location.X + (stepSize*erradas+5), lblErradas.Location.Y);
-					lblCorretas.Text = corretas.ToString();
-					lblErradas.Text = erradas.ToString();
-
-					//Query para inserir informações no histórico e query para mostrar historico
-					String inserir = "Insert Into tbl_historico values ("+id+", '"+nome+"', '"+cbMaterias.Text+"', "+corretas+", "+erradas+", '"+lblData.Text+"')";
-					String mostrar = "Select * from tbl_historico where id="+id;
-					con.Open();
-					cmd = new MySqlCommand();
-					cmd.Connection = con;
-					cmd.CommandText = inserir;
-					cmd.ExecuteReader();
-					con.Close();
-
-					con.Open();
-					cmd2 = new MySqlCommand();
-					cmd2.Connection = con;
-					cmd2.CommandText = mostrar;
-
-					MySqlDataAdapter da = new MySqlDataAdapter();
-					da.SelectCommand = cmd2;
-
-					DataTable dt = new DataTable();
-					da.Fill(dt);
-					gdViewHistórico.DataSource = dt;
-
-					da.Dispose();
-					con.Close();
 				}
 			}
 			else
 			{
+				//Guardar respost
+				p[indiceAtual].SetCheckbox(verificacaoCheckbox);
+
 				//Avançar página
 				indiceAtual++;
 				ExibirPergunta();
@@ -381,6 +403,9 @@ namespace daniel_grazina_3935
 			}
 			else
 			{
+				//Guardar respost
+				p[indiceAtual].SetCheckbox(verificacaoCheckbox);
+
 				indiceAtual--;
 				ExibirPergunta();
 			}
